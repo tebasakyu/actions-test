@@ -13,7 +13,9 @@ jobs:
         uses: actions/checkout@v2
       - name: push
         run: |
-          date > /tmp/date.txt
-          git add ..
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          date > date.txt
+          git add .
           git commit -m "Write datetime."
           git push origin HEAD
