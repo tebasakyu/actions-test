@@ -6,6 +6,8 @@ on:
 
 jobs:
   git_push:
+    runs-on: ubuntu-latest
+
     steps:
       - name: checkout
         uses: actions/checkout@v2
