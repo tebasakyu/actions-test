@@ -11,3 +11,9 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+      - name: push
+        run: |
+          date > /tmp/date.txt
+          git add ..
+          git commit -m "Write datetime."
+          git push origin HEAD
