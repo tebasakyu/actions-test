@@ -1,0 +1,11 @@
+name: issue
+
+on:
+  issues:
+    type: [opend, edited]
+
+jobs:
+  git_push:
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
