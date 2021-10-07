@@ -16,7 +16,7 @@ jobs:
       - name: push
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.name "GHA"
           date > date.txt
           git add .
           git commit -m "Write datetime."
