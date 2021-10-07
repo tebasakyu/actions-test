@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+        with: 
+          persist-credentials: false
       - name: push
         run: |
           git config --local user.email "action@github.com"
