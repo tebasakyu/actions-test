@@ -22,3 +22,41 @@ jobs:
           git add .
           git commit -m "Write datetime."
           git push origin HEAD
+      - name: Slack notify(success)
+        uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          custom_payload: |
+            {
+              color: 'good',
+              text: "aaa",
+              attachments: [
+                {
+                  color: 'good',
+                  fields: [
+                    {
+                      title: 'bbb',
+                      value: '<https://google.com|${{ github.actor }}>',
+                      short: false
+                    },
+                    {
+                      title: 'ddd',
+                      value: '`@${{ github.actor }}`',
+                      short: false
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_DM_WEBHOOK_URL }}
+    if: ${{ success() }}
+     - name: Slack notify(failure)
+       uses: 8398a7/action-slack@v3
+       with:
+         status: failure
+         fields: workflow,job,took,author
+       env:
+         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_DM_WEBHOOK_URL }}
+       if: ${{ failure() }}
+
