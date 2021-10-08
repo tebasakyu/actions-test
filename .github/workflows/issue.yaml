@@ -50,13 +50,3 @@ jobs:
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_DM_WEBHOOK_URL }}
-        if: success()
-     - name: Slack notify(failure)
-       uses: 8398a7/action-slack@v3
-       with:
-         status: failure
-         fields: workflow,job,took,author
-       env:
-         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_DM_WEBHOOK_URL }}
-       if: failure()
-
