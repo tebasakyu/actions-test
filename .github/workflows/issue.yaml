@@ -12,7 +12,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
         with: 
-          token: ${{ secrets.PAT }}
+          persist-credentials: false
       - name: push
         run: |
           git config --local user.email "action@github.com"
