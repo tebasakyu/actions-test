@@ -50,3 +50,4 @@ jobs:
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_DM_WEBHOOK_URL }}
+        if: success()
