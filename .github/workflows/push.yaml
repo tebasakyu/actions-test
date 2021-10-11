@@ -16,4 +16,4 @@ jobs:
       - name: echo
         run: |
           echo ${{ env.BRANCH_NAME }}
-          echo ${env.BRANCH_NAME/release\//ver.}
+          echo ${${{ env.BRANCH_NAME }}/release\//ver.}
