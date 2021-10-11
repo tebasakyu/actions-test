@@ -54,7 +54,8 @@ jobs:
       - name: Slack notify(failure)
         uses: 8398a7/action-slack@v3
         with:
-          author_name: 'Author is ${{ github.author }}'
+          author_name: 'Author is ${{ github.actor }}'
+          text: 'Author is ${{ github.author }}'
           status: failure
           fields: workflow,job,took
         env:
