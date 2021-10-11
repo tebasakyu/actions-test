@@ -54,8 +54,9 @@ jobs:
       - name: Slack notify(failure)
         uses: 8398a7/action-slack@v3
         with:
+          author_name: 'Author is ${{ github.author }}'
           status: failure
-          fields: workflow,job,took,author
+          fields: workflow,job,took
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_DM_WEBHOOK_URL }}
         if: failure()
