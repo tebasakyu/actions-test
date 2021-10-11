@@ -17,4 +17,4 @@ jobs:
         run: |
           echo ${{ env.BRANCH_NAME }}
           branch_name=${{ env.BRANCH_NAME }}
-          echo ${ver_name/release\//ver.}
+          echo ${branch_name/release\//ver.}
