@@ -8,5 +8,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
-        uses: actions/checkout@v2
+      - name: Is it merge commit?
+        run: |
+          ref=${{ github.ref }}
+          branch_name=${ref#refs/heads/}
+          echo "BRANCH_NAME=${ref#refs/heads/}" >> $GITHUB_ENV
+      - name: echo
+        run: |
+          echo ${{ env.BRANCH_NAME }}
+          echo ${env.BRANCH_NAME/release\//ver.}
