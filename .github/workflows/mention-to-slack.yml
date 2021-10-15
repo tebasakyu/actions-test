@@ -11,8 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run
-        uses: abeyuya/actions-mention-to-slack@v2
+        uses: Laurenfrost/mention-to-slack@latest
         with:
+          configuration-path: .github/mention-to-slack.yml
           repo-token: ${{ secrets.PAT }}
           slack-webhook-url: ${{ secrets.SLACK_DM_WEBHOOK_URL }}
           bot-name: "Send Mention from BOT"
