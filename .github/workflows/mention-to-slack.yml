@@ -15,6 +15,4 @@ jobs:
         with:
           repo-token: ${{ secrets.PAT }}
           slack-webhook-url: ${{ secrets.SLACK_DM_WEBHOOK_URL }}
-          icon-url: https://img.icons8.com/color/256/000000/github-2.png
-          bot-name: "Send Mention from abeyuya/actions-mention-to-slack"
-          run-id: ${{ github.run_id }}
+          bot-name: "Send Mention from BOT"
